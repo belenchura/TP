@@ -43,6 +43,20 @@ actPeligrosa(Alguien):-
 jefePeligroso(Alguien):-
 	trabajaPara(JefePeligroso,Alguien),
 	esPeligroso(JefePeligroso).
+	
+nivelRespeto(Personaje,NivelRespeto):-
+	personaje(Personaje,actriz(ListaPeliculas)),
+	length(ListaPeliculas,CantPeliculas),
+	NivelRespeto is (0.1*CantPeliculas).
+
+nivelRespeto(Personaje,10):-
+	personaje(Personaje,mafioso(resuelveProblemas)).
+	
+nivelRespeto(Personaje,20):-
+	personaje(Personaje,mafioso(capo)).
+
+nivelRespeto(vincent,15).
+
  
 
 
